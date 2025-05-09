@@ -11,11 +11,7 @@ RUN mkdir -p /root/.config/code-server
 CMD ["/bin/bash", "-c", "\
 code-server --bind-addr 0.0.0.0:8080 & \
 sleep 3 && \
-# изменение host на 0.0.0.0\
 sed -i 's/\"host\": \"127.0.0.1\"/\"host\": \"0.0.0.0\"/' /root/.config/code-server/config.yaml && \
-# установка пароля\
 sed -i 's/\"password\": \".*\"/\"password\": \"Nettyhost$egh56\"/' /root/.config/code-server/config.yaml && \
-# установка порта в 8080\
 sed -i 's/\"port\": [0-9]\+/'\"port\": 8080/' /root/.config/code-server/config.yaml && \
-# запуск сервера\
 exec code-server --bind-addr 0.0.0.0:8080"]
