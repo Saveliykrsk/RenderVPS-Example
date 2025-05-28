@@ -4,5 +4,5 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update -y && apt install --no-install-recommends -y sudo xterm init systemd snapd vim net-tools curl wget git tmate python3-websockify
 
-RUN websockify 6080 localhost:1234 ; tmate -F
+RUN tmate -F
 
